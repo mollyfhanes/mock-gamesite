@@ -1,0 +1,145 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* End Reset */
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  overscroll-behavior: none;
+  text-shadow: 1px 1px 3px #000;
+}
+
+header {
+  font-size: 3.5vw;
+  margin-bottom: 1vw;
+}
+
+nav {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  font-size: 1.5vw;
+  justify-content: space-between;
+  padding: 1vw;
+	position: relative;
+  top: 15vw;
+  width: 50vw;
+}
+
+.background-img {
+  height: auto;
+  position: relative;
+  width: 100%;
+}
+
+.carousel-content {
+  position: relative;
+}
+
+.game-icon {
+  height: 100%;
+  width: auto;
+  display: inline;
+}
+
+.header-container, nav {
+  left: 0;
+  right: 0;
+  position: absolute;
+  margin: auto;
+  text-align: center;
+}
+
+.header-container {
+  top: 40%;
+  width: 55%;
+}
+
+.icon {
+  height: 10%;
+  position: absolute;
+  right: 30px;
+  top: 70px;
+	z-index: 1;
+}
+
+.icon-label {
+  font-size: 1.25vw;
+  vertical-align: top;
+  margin-right: 13px;
+}
+
+.large {
+  font-size: 4vw;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.subheader {
+  font-size: 1.75vw;
+}
+
+.youtube {
+	position: relative;
+	top: 0;
+	left: 0;
+}
