@@ -56,11 +56,3 @@ Background.defaultProps = {
   alt: 'background',
   changeContent: () => {}
 }
-
-/*
-<video width="100%" height="auto" autoPlay onEnded={changeContent}>
-  Sorry, your browser doesn&apos;t support embedded videos.
-  <source src={`${mediaId}.mp4`} type="video/mp4" />
-</video>
-
-*/
