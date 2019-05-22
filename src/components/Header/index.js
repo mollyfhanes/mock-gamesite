@@ -10,7 +10,6 @@ const Header = (props) => {
   const {
     anchor, anchorTitle, classes, hasNav, header, subheader
   } = props
-  console.log()
 
   return (
     <div className="header-container">
@@ -38,6 +37,6 @@ Header.defaultProps = {
   anchorTitle: null,
   classes: null,
   hasNav: false,
-  header: 'Hello World',
+  header: 'Default Header',
   subheader: null
 }

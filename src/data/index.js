@@ -1,3 +1,4 @@
+// Media Data
 export const data1 = [
   {
     id: 0,
@@ -45,5 +46,30 @@ export const data3 = [
     gameIcon:
       'https://eaassets-a.akamaihd.net/origin-com-store-final-assets-prod/192492/231.0x326.0/1039096_LB_231x326_en_US_%5E_2016-05-06-05-17-52_63c62ad76b294c6dc44ea97fc0561b22fdc7c1c1.jpg',
     iconLabel: 'Titanfall 2'
+  }
+]
+
+// Content
+export const content = [
+  {
+    anchor: 'top',
+    data: data1,
+    header: 'Play great PC games and connect with your friends, all in one place'
+  },
+  {
+    anchor: 'greatpcgames',
+    anchorTitle: 'Great PC games',
+    data: data2,
+    header: 'Great PC games',
+    subheader:
+      "Epic RPGs, action-packed shooters, simulation hits - no matter your tastes, Origin's got you covered."
+  },
+  {
+    anchor: 'downloadnow',
+    anchorTitle: 'Download now',
+    data: data3,
+    header: 'What are you waiting for?',
+    subheader: `Download the Origin client, grab a soda (or tea, if that's your thing), and dig into that game you've
+        been obsessing over. Sounds like a perfect day to us.`
   }
 ]

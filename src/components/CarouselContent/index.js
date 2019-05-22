@@ -8,38 +8,14 @@ import Header from '../Header'
 import Icon from '../Icon'
 
 const CarouselContent = (props) => {
-  const {
-    anchor, anchorTitle, data, hasNav, header, subheader, large
-  } = props
-
-  // Child Props
-  const backgroundProps = {
-    alt: data.iconLabel,
-    key: data.mediaId,
-    mediaId: data.mediaId,
-    type: data.type,
-    ...props
-  }
-
-  const iconProps = {
-    gameIcon: data.gameIcon,
-    iconLabel: data.iconLabel
-  }
-
-  const headerProps = {
-    anchor,
-    anchorTitle,
-    classes: large ? 'large' : null,
-    hasNav,
-    header,
-    subheader
-  }
+  const { data, large } = props
+  const { mediaId, gameIcon } = data
 
   return (
     <div className="carousel-content">
-      {data.gameIcon && <Icon {...iconProps} />}
-      <Background {...backgroundProps} />
-      <Header {...headerProps} />
+      {gameIcon && <Icon {...props} />}
+      <Background {...props} key={mediaId} />
+      <Header {...props} classes={large ? 'large' : null} />
     </div>
   )
 }
@@ -47,8 +23,6 @@ const CarouselContent = (props) => {
 export default CarouselContent
 
 CarouselContent.propTypes = {
-  anchor: PropTypes.string,
-  anchorTitle: PropTypes.string,
   data: PropTypes.shape({
     id: PropTypes.number,
     type: PropTypes.oneOf(['image', 'video']),
@@ -56,17 +30,9 @@ CarouselContent.propTypes = {
     gameIcon: PropTypes.string,
     iconLabel: PropTypes.string
   }).isRequired,
-  hasNav: PropTypes.bool,
-  header: PropTypes.string,
-  large: PropTypes.bool,
-  subheader: PropTypes.string
+  large: PropTypes.bool
 }
 
 CarouselContent.defaultProps = {
-  anchor: '#default-anchor',
-  anchorTitle: null,
-  hasNav: false,
-  header: 'Default Header',
-  large: false,
-  subheader: null
+  large: false
 }

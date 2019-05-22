@@ -1,58 +1,44 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import YouTubePlayer from 'react-player/lib/players/YouTube'
 
-class Background extends Component {
-  constructor() {
-    super()
-    this.state = {
-      height: window.innerHeight,
-      width: window.innerWidth
-    }
-    this.updateSize = this.updateSize.bind(this)
-  }
+const Background = (props) => {
+  const {
+    data, changeContent, height, width
+  } = props
+  const { iconLabel, mediaId, type } = data
 
-  componentDidMount() {
-    window.addEventListener('resize', this.updateSize)
-  }
-
-  updateSize() {
-    this.setState({ height: window.innerHeight, width: window.innerWidth })
-  }
-
-  render() {
-    const {
-      alt, changeContent, mediaId, type
-    } = this.props
-    const { height, width } = this.state
-
-    return type === 'image' ? (
-      <img src={mediaId} alt={alt} className="background-img" />
-    ) : (
-      <YouTubePlayer
-        url={`https://www.youtube.com/embed/${mediaId}`}
-        className="youtube"
-        playing
-        controls={false}
-        volume={0}
-        height={height}
-        width={width}
-        onEnded={changeContent}
-      />
-    )
-  }
+  return type === 'image' ? (
+    <img src={mediaId} alt={iconLabel} className="background-img" />
+  ) : (
+    <YouTubePlayer
+      url={`https://www.youtube.com/embed/${mediaId}`}
+      className="youtube"
+      playing
+      controls={false}
+      volume={0}
+      height={height}
+      width={width}
+      onEnded={changeContent}
+    />
+  )
 }
 
 export default Background
 
 Background.propTypes = {
-  alt: PropTypes.string,
+  data: PropTypes.shape({
+    iconLabel: PropTypes.string,
+    mediaId: PropTypes.string,
+    type: PropTypes.oneOf(['image', 'video'])
+  }).isRequired,
   changeContent: PropTypes.func,
-  mediaId: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['image', 'video']).isRequired
+  height: PropTypes.number,
+  width: PropTypes.number
 }
 
 Background.defaultProps = {
-  alt: 'background',
-  changeContent: () => {}
+  changeContent: () => {},
+  height: window.innerHeight,
+  width: window.innerWidth
 }

@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Icon = ({ gameIcon, iconLabel }) => {
+const Icon = ({ data }) => {
+  const { gameIcon, iconLabel } = data
+
   return (
     <div className="icon">
       <span className="icon-label">{iconLabel}</span>
@@ -13,10 +15,8 @@ const Icon = ({ gameIcon, iconLabel }) => {
 export default Icon
 
 Icon.propTypes = {
-  gameIcon: PropTypes.string.isRequired,
-  iconLabel: PropTypes.string
-}
-
-Icon.defaultProps = {
-  iconLabel: 'Game Title'
+  data: PropTypes.shape({
+    gameIcon: PropTypes.string,
+    iconLabel: PropTypes.string
+  }).isRequired
 }
